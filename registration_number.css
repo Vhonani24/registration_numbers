@@ -6,3 +6,11 @@ body{
     margin: auto;
     padding: 1em;
 }
+
+.test{
+    background-color: yellow;
+    border: black;
+    border-style: solid;
+    width: auto;
+    border-radius: 25px;
+}
