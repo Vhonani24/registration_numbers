@@ -7,7 +7,7 @@ var addButton = document.querySelector("#add");
 //get reference to the select button
 var selectButton = document.querySelector(".form-select");
 //for testing
-var test = document.querySelector(".test");
+var retrieve = document.querySelector(".retrieve");
 
 var savedReg = localStorage.getItem('registration');
     
@@ -21,10 +21,7 @@ function storeRegNum(){ //stores items in the localStorage
 
     var regex  = /^[a-zA-Z]{2}\s[0-9]+$/;
 
-   //var savedReg = localStorage.getItem('registration');
-    
-   // savedReg = savedReg ? savedReg.split(',') : [];
-
+   
     console.log(savedReg.length);
     
 
@@ -59,13 +56,85 @@ function storeRegNum(){ //stores items in the localStorage
 function getReg(){ //retrieves items in the localStorage
     
     if(selectButton.value === "Cape Town"){
-        //var savedReg = localStorage.getItem('registration');
-        var div = document.createElement("div");
-        
-        var infor = document.createTextNode(savedReg);
-        div.appendChild(infor);
-        test.appendChild(div);
+     retrieve.innerHTML = "";
+        for(var i=0;i < savedReg.length;i++){
+            if(savedReg[i].startsWith('CA')){
+                var cape = [];
+                cape.push(savedReg[i]);
+                cape.forEach(function(reg)  {
+                    var div = document.createElement("div");
+                    div.innerHTML = reg;
+                    div.className = 'test';
+                    retrieve.appendChild(div);
 
+                })
+                
+            }
+            
+
+        }
+        
+        
+    }
+    else if(selectButton.value === "Bellville"){
+     
+        for(var i=0;i < savedReg.length;i++){
+            if(savedReg[i].startsWith('CY')){
+                var bell = [];
+                bell.push(savedReg[i]);
+                bell.forEach(function(reg) {
+                    var div = document.createElement("div");
+                    div.innerHTML = reg;
+                    div.className = 'test';
+                    retrieve.appendChild(div);
+
+                })
+                
+            }
+            
+
+        }
+        
+        
+    }
+    else if(selectButton.value === "Paarl"){
+     
+        for(var i=0;i < savedReg.length;i++){
+            if(savedReg[i].startsWith('CJ')){
+                var paarl = [];
+                paarl.push(savedReg[i]);
+                paarl.forEach(function(reg) {
+                    var div = document.createElement("div");
+                    div.innerHTML = reg;
+                    div.className = 'test';
+                    retrieve.appendChild(div);
+
+                })
+                
+            }
+            
+
+        }
+        
+        
+    }
+    else if(selectButton.value === "All Towns"){
+     
+               
+                savedReg.forEach(function(reg) {
+                    var div = document.createElement("div");
+                    div.innerHTML = reg;
+                    div.className = 'test';
+                    retrieve.appendChild(div);
+
+                })
+                
+            
+            
+
+        
+        
+        
     }
 }
 function reset(){

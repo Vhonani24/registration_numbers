@@ -11,6 +11,10 @@ body{
     background-color: yellow;
     border: black;
     border-style: solid;
-    width: auto;
+    width: 125px;
     border-radius: 25px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
 }
